@@ -1,0 +1,102 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Estime o 13º salário proporcional e o valor de cada parcela.">
+<meta name="theme-color" content="#2B4C7E">
+<title>Calculadora de 13º salário | Nexus</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body><header class="site-header"><div class="header-inner"><a class="logo" href="../index.html" aria-label="Nexus — página inicial">Nexus<span>.</span></a><nav aria-label="Navegação principal"><ul class="nav-list"><li><a href="../index.html">Início</a></li>
+<li><a href="../index.html#calculadoras" aria-current="page">Calculadoras</a></li>
+<li><a href="duvidas.html">Dúvidas</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="page-main"><section class="titulo">
+<div class="breadcrumb">Início <span>›</span> Cálculos <span>›</span> 13º Salário</div>
+<div class="titulo-conteudo">
+
+<div>
+<h1>Cálculo do 13º salário</h1>
+<p>Informe seus dados para estimar o valor do 13º salário.</p>
+</div>
+</div>
+</section>
+<section class="intro"><p>O <strong>13º salário</strong> é um salário extra pago todo fim de ano. O valor é proporcional aos meses trabalhados: cada mês com 15 dias ou mais conta como 1/12, os chamados “avos”. Ele costuma ser dividido em duas parcelas, a primeira até 30 de novembro e a segunda até 20 de dezembro.</p>
+</section>
+<div class="calculadora">
+<div class="container-forms">
+<h2>Informe os dados</h2>
+<div class="campo">
+<label for="salario">Salário bruto mensal</label>
+<input id="salario" inputmode="decimal" min="0" placeholder="0,00" step="0.01" type="number"/>
+</div>
+<div class="campo">
+<label for="variaveis">Média mensal de adicionais</label>
+<input id="variaveis" inputmode="decimal" min="0" placeholder="0,00" step="0.01" type="number"/>
+</div>
+<div class="campo">
+<label for="meses">Meses trabalhados no ano</label>
+<select id="meses"><option value="12">12 meses</option><option value="11">11 meses</option><option value="10">10 meses</option><option value="9">9 meses</option><option value="8">8 meses</option><option value="7">7 meses</option><option value="6">6 meses</option><option value="5">5 meses</option><option value="4">4 meses</option><option value="3">3 meses</option><option value="2">2 meses</option><option value="1">1 mês</option></select>
+</div>
+<p aria-live="polite" class="erro" id="erro" role="alert"></p>
+<button class="btn-calcular" id="calcular" type="button">Calcular</button>
+</div>
+<div class="card resultado">
+<div class="resultado-topo">
+<h2>Resultado da simulação</h2>
+<span class="badge">Estimativa</span>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Avos considerados</strong>
+<small>Meses trabalhados ÷ 12</small>
+</div>
+<strong id="r-avos">0/12</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>1ª parcela</strong>
+<small>50% do valor, paga até 30 de novembro</small>
+</div>
+<strong id="r-p1">R$ 0,00</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>2ª parcela</strong>
+<small>Saldo, pago até 20 de dezembro</small>
+</div>
+<strong id="r-p2">R$ 0,00</strong>
+</div>
+<div class="total">
+<div>
+<strong>Total do 13º salário</strong>
+<small>Soma das duas parcelas</small>
+</div>
+<strong id="r-total">R$ 0,00</strong>
+</div>
+<small class="nota">Valores brutos e estimados, sem descontos de INSS e IRRF. Não substitui a conferência de um contador ou da convenção coletiva da categoria.</small>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a class="footer-logo" href="../index.html">Nexus<span>.</span></a><p>Calculadoras e explicações sobre verbas trabalhistas.</p>
+</div>
+<div><h2>Calculadoras</h2>
+<ul><li><a href="recisao.html">Rescisão contratual</a></li>
+<li><a href="ferias.html">Férias</a></li>
+<li><a href="decimo-terceiro.html">13º salário</a></li>
+<li><a href="fgts.html">FGTS</a></li>
+<li><a href="horas-extras.html">Horas extras e DSR</a></li>
+</ul>
+</div>
+<div><h2>O site</h2>
+<ul><li><a href="duvidas.html">Dúvidas frequentes</a></li>
+<li><a href="sobre.html">Sobre a Nexus</a></li>
+<li><a href="sobre.html#seguranca">Limites das simulações</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>© 2026 Nexus</span><span>Os valores calculados são estimativas.</span></div>
+</footer>
+<script src="../assets/js/utils.js" defer></script><script src="../assets/js/decimo-terceiro.js" defer></script></body></html>

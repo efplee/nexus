@@ -1,0 +1,205 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Estimativa das verbas de rescisão: saldo de salário, aviso prévio, férias, 13º e multa do FGTS.">
+<meta name="theme-color" content="#2B4C7E">
+<title>Calculadora de rescisão | Nexus</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body><header class="site-header"><div class="header-inner"><a class="logo" href="../index.html" aria-label="Nexus — página inicial">Nexus<span>.</span></a><nav aria-label="Navegação principal"><ul class="nav-list"><li><a href="../index.html">Início</a></li>
+<li><a href="../index.html#calculadoras" aria-current="page">Calculadoras</a></li>
+<li><a href="duvidas.html">Dúvidas</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="page-main"><section class="titulo">
+<div class="breadcrumb">Início <span>›</span> Cálculos <span>›</span> Rescisão</div>
+<div class="titulo-conteudo">
+
+<div>
+<h1>Cálculo de rescisão</h1>
+<p>Veja uma estimativa das principais verbas da sua rescisão.</p>
+</div>
+</div>
+</section>
+<section class="intro"><p><strong>Rescisão</strong> é o encerramento do contrato de trabalho. Quando isso acontece, a empresa precisa acertar o que deve ao trabalhador: saldo de salário, férias, 13º proporcional, aviso prévio e, em alguns casos, a multa do FGTS. O que entra na conta depende do motivo da saída: quem pede demissão não recebe a multa, e na justa causa perdem-se as férias proporcionais e o 13º. O prazo para pagar tudo é de até 10 dias corridos.</p>
+</section>
+<div class="calculadora">
+<div class="container-forms">
+<h2>Informe os dados</h2>
+<div class="campo">
+<label for="salario">Salário bruto mensal</label>
+<input id="salario" inputmode="decimal" min="0" placeholder="0,00" type="number"/>
+</div>
+<div class="campo">
+<label for="tipo-rescisao">Tipo de rescisão</label>
+<select id="tipo-rescisao">
+<option value="">Selecione o tipo de rescisão</option>
+<option value="justa-causa">Demissão por justa causa</option>
+<option value="sem-justa-causa">Demissão sem justa causa</option>
+<option value="pedido">Pedido de demissão</option>
+<option value="acordo">Acordo entre as partes</option>
+<option value="termino">Término de contrato</option>
+</select>
+</div>
+<div class="campo">
+<label for="data-admissao">Data de admissão</label>
+<input id="data-admissao" type="date"/>
+</div>
+<div class="campo">
+<label for="data-demissao">Data de demissão</label>
+<input id="data-demissao" type="date"/>
+</div>
+<div class="campo">
+<label for="aviso-previo">Aviso prévio</label>
+<select id="aviso-previo">
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+</select>
+</div>
+<div class="campo">
+<label for="ferias-vencidas">Férias vencidas</label>
+<select id="ferias-vencidas">
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+</select>
+</div>
+<div class="campo">
+<label for="ferias-proporcionais">Férias proporcionais</label>
+<select id="ferias-proporcionais">
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+</select>
+</div>
+<div class="campo">
+<label for="decimo-terceiro">13º salário proporcional</label>
+<select id="decimo-terceiro">
+<option value="nao">Não</option>
+<option value="sim">Sim</option>
+</select>
+</div>
+<div class="opcao">
+<button aria-label="Considerar multa do FGTS" aria-pressed="true" class="switch ativo" type="button">
+<div></div>
+</button>
+<div>
+<strong>Considerar multa de 40% do FGTS</strong>
+<small>
+                    Aplicável apenas em caso de demissão sem justa causa.
+                </small>
+</div>
+</div>
+<p aria-live="polite" class="erro" id="erro" role="alert"></p>
+<button class="btn-calcular" id="calcular" type="button">
+            Calcular Rescisão
+        </button>
+</div>
+<div class="card resultado">
+<div class="resultado-topo">
+<h2>Resultado da simulação</h2>
+<span class="badge">
+                Estimativa
+            </span>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Saldo de salário</strong>
+<small>
+                    Dias trabalhados no mês da rescisão
+                </small>
+</div>
+<strong id="saldo-salario">
+                R$ 0,00
+            </strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Férias vencidas</strong>
+<small>
+                    Com adicional de 1/3
+                </small>
+</div>
+<strong id="resultado-ferias-vencidas">
+                R$ 0,00
+            </strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Férias proporcionais</strong>
+<small>
+                    Com adicional de 1/3
+                </small>
+</div>
+<strong id="resultado-ferias">
+                R$ 0,00
+            </strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>13º salário proporcional</strong>
+<small>
+                    Calculado sobre os meses trabalhados
+                </small>
+</div>
+<strong id="resultado-13">
+                R$ 0,00
+            </strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Aviso prévio</strong>
+<small>
+                    Indenizado ou trabalhado
+                </small>
+</div>
+<strong id="resultado-aviso">
+                R$ 0,00
+            </strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Multa de 40% do FGTS</strong>
+<small>
+                    Se aplicável
+                </small>
+</div>
+<strong id="resultado-fgts">
+                R$ 0,00
+            </strong>
+</div>
+<div class="total">
+<div>
+<strong>Total da rescisão</strong>
+<small>
+                    Soma de todos os valores acima
+                </small>
+</div>
+<strong id="total">
+                R$ 0,00
+            </strong>
+</div>
+<small class="nota">Valores brutos e estimados, sem descontos de INSS e IRRF. Não substitui a conferência de um contador ou da convenção coletiva da categoria. O saldo do FGTS é estimado em 8% do salário por mês trabalhado.</small>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a class="footer-logo" href="../index.html">Nexus<span>.</span></a><p>Calculadoras e explicações sobre verbas trabalhistas.</p>
+</div>
+<div><h2>Calculadoras</h2>
+<ul><li><a href="recisao.html">Rescisão contratual</a></li>
+<li><a href="ferias.html">Férias</a></li>
+<li><a href="decimo-terceiro.html">13º salário</a></li>
+<li><a href="fgts.html">FGTS</a></li>
+<li><a href="horas-extras.html">Horas extras e DSR</a></li>
+</ul>
+</div>
+<div><h2>O site</h2>
+<ul><li><a href="duvidas.html">Dúvidas frequentes</a></li>
+<li><a href="sobre.html">Sobre a Nexus</a></li>
+<li><a href="sobre.html#seguranca">Limites das simulações</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>© 2026 Nexus</span><span>Os valores calculados são estimativas.</span></div>
+</footer>
+<script src="../assets/js/utils.js" defer></script><script src="../assets/js/recisao.js" defer></script></body></html>

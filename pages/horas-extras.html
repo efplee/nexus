@@ -1,0 +1,132 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Calcule horas extras, adicional noturno e o reflexo no descanso semanal (DSR).">
+<meta name="theme-color" content="#2B4C7E">
+<title>Horas extras e DSR | Nexus</title>
+<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body><header class="site-header"><div class="header-inner"><a class="logo" href="../index.html" aria-label="Nexus — página inicial">Nexus<span>.</span></a><nav aria-label="Navegação principal"><ul class="nav-list"><li><a href="../index.html">Início</a></li>
+<li><a href="../index.html#calculadoras" aria-current="page">Calculadoras</a></li>
+<li><a href="duvidas.html">Dúvidas</a></li>
+<li><a href="sobre.html">Sobre</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="page-main"><section class="titulo">
+<div class="breadcrumb">Início <span>›</span> Cálculos <span>›</span> Horas Extras &amp; DSR</div>
+<div class="titulo-conteudo">
+
+<div>
+<h1>Horas extras &amp; DSR</h1>
+<p>Informe as horas trabalhadas para estimar os adicionais e o DSR.</p>
+</div>
+</div>
+</section>
+<section class="intro"><p><strong>Hora extra</strong> é o tempo trabalhado além da jornada combinada, pago com acréscimo de pelo menos 50%. Em domingos e feriados sem folga compensatória, o pagamento costuma ser em dobro. O trabalho entre 22h e 5h rende ainda o adicional noturno de 20%. Como esses valores variáveis também entram no descanso semanal remunerado (DSR), a calculadora estima esse reflexo.</p>
+</section>
+<div class="calculadora">
+<div class="container-forms">
+<h2>Informe os dados</h2>
+<div class="campo">
+<label for="salario">Salário bruto mensal</label>
+<input id="salario" inputmode="decimal" min="0" placeholder="0,00" step="0.01" type="number"/>
+</div>
+<div class="campo">
+<label for="carga">Carga horária mensal (horas)</label>
+<input id="carga" inputmode="decimal" min="0" placeholder="220" step="any" type="number" value="220"/>
+</div>
+<div class="campo">
+<label for="he50">Horas extras a 50%</label>
+<input id="he50" inputmode="decimal" min="0" placeholder="0" step="0.5" type="number"/>
+</div>
+<div class="campo">
+<label for="he100">Horas extras a 100% (domingos e feriados)</label>
+<input id="he100" inputmode="decimal" min="0" placeholder="0" step="0.5" type="number"/>
+</div>
+<div class="campo">
+<label for="noturnas">Horas noturnas trabalhadas</label>
+<input id="noturnas" inputmode="decimal" min="0" placeholder="0" step="0.5" type="number"/>
+</div>
+<div class="campo">
+<label for="uteis">Dias úteis no mês (seg a sáb)</label>
+<input id="uteis" inputmode="decimal" min="0" placeholder="26" step="any" type="number" value="26"/>
+</div>
+<div class="campo">
+<label for="domingos">Domingos e feriados no mês</label>
+<input id="domingos" inputmode="decimal" min="0" placeholder="4" step="any" type="number" value="4"/>
+</div>
+<p aria-live="polite" class="erro" id="erro" role="alert"></p>
+<button class="btn-calcular" id="calcular" type="button">Calcular</button>
+</div>
+<div class="card resultado">
+<div class="resultado-topo">
+<h2>Resultado da simulação</h2>
+<span class="badge">Estimativa</span>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Valor da hora normal</strong>
+<small>Salário ÷ carga horária</small>
+</div>
+<strong id="r-hora">R$ 0,00</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Horas extras 50%</strong>
+<small>Hora normal + 50%</small>
+</div>
+<strong id="r-he50">R$ 0,00</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Horas extras 100%</strong>
+<small>Hora normal em dobro</small>
+</div>
+<strong id="r-he100">R$ 0,00</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>Adicional noturno</strong>
+<small>20% sobre a hora normal</small>
+</div>
+<strong id="r-noturno">R$ 0,00</strong>
+</div>
+<div class="resultado-item">
+<div>
+<strong>DSR sobre extras e adicional</strong>
+<small>(Total variável ÷ dias úteis) × domingos e feriados</small>
+</div>
+<strong id="r-dsr">R$ 0,00</strong>
+</div>
+<div class="total">
+<div>
+<strong>Total em adicionais</strong>
+<small>Somado ao salário base, valor bruto</small>
+</div>
+<strong id="r-total">R$ 0,00</strong>
+</div>
+<small class="nota">Valores brutos e estimados, sem descontos de INSS e IRRF. Não substitui a conferência de um contador ou da convenção coletiva da categoria.</small>
+</div>
+</div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a class="footer-logo" href="../index.html">Nexus<span>.</span></a><p>Calculadoras e explicações sobre verbas trabalhistas.</p>
+</div>
+<div><h2>Calculadoras</h2>
+<ul><li><a href="recisao.html">Rescisão contratual</a></li>
+<li><a href="ferias.html">Férias</a></li>
+<li><a href="decimo-terceiro.html">13º salário</a></li>
+<li><a href="fgts.html">FGTS</a></li>
+<li><a href="horas-extras.html">Horas extras e DSR</a></li>
+</ul>
+</div>
+<div><h2>O site</h2>
+<ul><li><a href="duvidas.html">Dúvidas frequentes</a></li>
+<li><a href="sobre.html">Sobre a Nexus</a></li>
+<li><a href="sobre.html#seguranca">Limites das simulações</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom"><span>© 2026 Nexus</span><span>Os valores calculados são estimativas.</span></div>
+</footer>
+<script src="../assets/js/utils.js" defer></script><script src="../assets/js/horas-extras.js" defer></script></body></html>
