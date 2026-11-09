@@ -1,120 +1,149 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Estime o saldo do FGTS e as multas de 40% e 20% na rescisão.">
-<meta name="theme-color" content="#2B4C7E">
-<title>Calculadora de FGTS | Nexus</title>
-<link rel="stylesheet" href="../assets/css/main.css">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estime o saldo do FGTS e as multas de 40% e 20% na rescisão.">
+    <meta name="theme-color" content="#2B4C7E">
+    <title>Calculadora de FGTS | Nexus</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body><header class="site-header"><div class="header-inner"><a class="logo" href="../index.html" aria-label="Nexus — página inicial">Nexus<span>.</span></a><nav aria-label="Navegação principal"><ul class="nav-list"><li><a href="../index.html">Início</a></li>
-<li><a href="../index.html#calculadoras" aria-current="page">Calculadoras</a></li>
-<li><a href="duvidas.html">Dúvidas</a></li>
-<li><a href="sobre.html">Sobre</a></li>
-</ul>
-</nav>
-</div>
-</header>
-<main class="page-main"><section class="titulo">
-<div class="breadcrumb">Início <span>›</span> Cálculos <span>›</span> FGTS</div>
-<div class="titulo-conteudo">
 
-<div>
-<h1>Consulta FGTS</h1>
-<p>Faça uma estimativa dos depósitos do FGTS e da multa na rescisão.</p>
-</div>
-</div>
-</section>
-<section class="intro"><p>O <strong>FGTS</strong> (Fundo de Garantia do Tempo de Serviço) é uma reserva em nome do trabalhador: todo mês a empresa deposita 8% do salário, sem descontar nada do contracheque. O saque é permitido em situações previstas em lei, como a demissão sem justa causa, quando a empresa ainda paga uma multa de 40% sobre o saldo. Esta página faz uma estimativa; para o valor exato, veja o extrato no app FGTS e informe o saldo no campo opcional.</p>
-</section>
-<div class="calculadora">
-<div class="container-forms">
-<h2>Informe os dados</h2>
-<div class="campo">
-<label for="salario">Salário bruto mensal</label>
-<input id="salario" inputmode="decimal" min="0" placeholder="0,00" step="0.01" type="number"/>
-</div>
-<div class="campo">
-<label for="data-admissao">Data de admissão</label>
-<input id="data-admissao" type="date"/>
-</div>
-<div class="campo">
-<label for="data-ref">Data de referência</label>
-<input id="data-ref" type="date"/>
-</div>
-<div class="campo">
-<label for="saldo">Saldo atual do FGTS (opcional)</label>
-<input id="saldo" inputmode="decimal" min="0" placeholder="Vazio = estimar" step="any" type="number"/>
-</div>
-<p aria-live="polite" class="erro" id="erro" role="alert"></p>
-<button class="btn-calcular" id="calcular" type="button">Calcular</button>
-</div>
-<div class="card resultado">
-<div class="resultado-topo">
-<h2>Resultado da simulação</h2>
-<span class="badge">Estimativa</span>
-</div>
-<div class="resultado-item">
-<div>
-<strong>Depósito mensal</strong>
-<small>8% do salário bruto</small>
-</div>
-<strong id="r-mensal">R$ 0,00</strong>
-</div>
-<div class="resultado-item">
-<div>
-<strong>Meses de contrato</strong>
-<small>Entre admissão e referência</small>
-</div>
-<strong id="r-meses">0 meses</strong>
-</div>
-<div class="resultado-item">
-<div>
-<strong>Saldo considerado</strong>
-<small>Informado ou estimado (8% × meses, sem correção)</small>
-</div>
-<strong id="r-saldo">R$ 0,00</strong>
-</div>
-<div class="resultado-item">
-<div>
-<strong>Multa de 40%</strong>
-<small>Demissão sem justa causa</small>
-</div>
-<strong id="r-multa40">R$ 0,00</strong>
-</div>
-<div class="resultado-item">
-<div>
-<strong>Multa de 20%</strong>
-<small>Acordo entre as partes</small>
-</div>
-<strong id="r-multa20">R$ 0,00</strong>
-</div>
-<div class="total">
-<div>
-<strong>Total a sacar sem justa causa</strong>
-<small>Saldo + multa de 40%</small>
-</div>
-<strong id="r-total">R$ 0,00</strong>
-</div>
-<small class="nota">Valores brutos e estimados, sem descontos de INSS e IRRF. Não substitui a conferência de um contador ou da convenção coletiva da categoria.</small>
-</div>
-</div>
-</main>
-<footer class="site-footer"><div class="footer-inner"><div class="footer-brand"><a class="footer-logo" href="../index.html">Nexus<span>.</span></a><p>Calculadoras e explicações sobre verbas trabalhistas.</p>
-</div>
-<div><h2>Calculadoras</h2>
-<ul><li><a href="recisao.html">Rescisão contratual</a></li>
-<li><a href="ferias.html">Férias</a></li>
-<li><a href="decimo-terceiro.html">13º salário</a></li>
-<li><a href="fgts.html">FGTS</a></li>
-<li><a href="horas-extras.html">Horas extras e DSR</a></li>
-</ul>
-</div>
-<div><h2>O site</h2>
-<ul><li><a href="duvidas.html">Dúvidas frequentes</a></li>
-<li><a href="sobre.html">Sobre a Nexus</a></li>
-<li><a href="sobre.html#seguranca">Limites das simulações</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom"><span>© 2026 Nexus</span><span>Os valores calculados são estimativas.</span></div>
-</footer>
-<script src="../assets/js/utils.js" defer></script><script src="../assets/js/fgts.js" defer></script></body></html>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="logo" href="../index.html">Nexus<span>.</span></a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../index.html#calculadoras" aria-current="page">Calculadoras</a></li>
+                    <li><a href="duvidas.html">Dúvidas</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="titulo">
+            <div class="breadcrumb">Início <span>›</span> Cálculos <span>›</span> FGTS</div>
+            <div class="titulo-conteudo">
+                <h1>Consulta FGTS</h1>
+                <p>Faça uma estimativa dos depósitos do FGTS e da multa na rescisão.</p>
+            </div>
+        </section>
+
+        <section class="intro">
+            <p>O <strong>FGTS</strong> (Fundo de Garantia do Tempo de Serviço) é uma reserva em nome do trabalhador: todo mês a empresa deposita 8% do salário, sem descontar nada do contracheque. O saque é permitido em situações previstas em lei, como a demissão sem justa causa, quando a empresa ainda paga uma multa de 40% sobre o saldo. Esta página faz uma estimativa; para o valor exato, veja o extrato no app FGTS e informe o saldo no campo opcional.</p>
+        </section>
+
+        <div class="calculadora">
+            <div class="container-forms">
+                <h2>Informe os dados</h2>
+                <div class="campo">
+                    <label for="salario">Salário bruto mensal</label>
+                    <input type="number" id="salario" placeholder="0,00" min="0" step="0.01">
+                </div>
+                <div class="campo">
+                    <label for="data-admissao">Data de admissão</label>
+                    <input type="date" id="data-admissao">
+                </div>
+                <div class="campo">
+                    <label for="data-ref">Data de referência</label>
+                    <input type="date" id="data-ref">
+                </div>
+                <div class="campo">
+                    <label for="saldo">Saldo atual do FGTS (opcional)</label>
+                    <input type="number" id="saldo" placeholder="Vazio = estimar" min="0" step="any">
+                </div>
+                <p class="erro" id="erro" role="alert"></p>
+                <button class="btn-calcular" id="calcular" type="button">Calcular</button>
+            </div>
+
+            <div class="card resultado">
+                <div class="resultado-topo">
+                    <h2>Resultado da simulação</h2>
+                    <span class="badge">Estimativa</span>
+                </div>
+                <div class="resultado-item">
+                    <div>
+                        <strong>Depósito mensal</strong>
+                        <small>8% do salário bruto</small>
+                    </div>
+                    <strong id="r-mensal">R$ 0,00</strong>
+                </div>
+                <div class="resultado-item">
+                    <div>
+                        <strong>Meses de contrato</strong>
+                        <small>Entre admissão e referência</small>
+                    </div>
+                    <strong id="r-meses">0 meses</strong>
+                </div>
+                <div class="resultado-item">
+                    <div>
+                        <strong>Saldo considerado</strong>
+                        <small>Informado ou estimado (8% x meses, sem correção)</small>
+                    </div>
+                    <strong id="r-saldo">R$ 0,00</strong>
+                </div>
+                <div class="resultado-item">
+                    <div>
+                        <strong>Multa de 40%</strong>
+                        <small>Demissão sem justa causa</small>
+                    </div>
+                    <strong id="r-multa40">R$ 0,00</strong>
+                </div>
+                <div class="resultado-item">
+                    <div>
+                        <strong>Multa de 20%</strong>
+                        <small>Acordo entre as partes</small>
+                    </div>
+                    <strong id="r-multa20">R$ 0,00</strong>
+                </div>
+                <div class="total">
+                    <div>
+                        <strong>Total a sacar sem justa causa</strong>
+                        <small>Saldo + multa de 40%</small>
+                    </div>
+                    <strong id="r-total">R$ 0,00</strong>
+                </div>
+                <small class="nota">Valores brutos e estimados, sem descontos de INSS e IRRF. Não substitui a conferência de um contador ou da convenção coletiva da categoria.</small>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a class="footer-logo" href="../index.html">Nexus<span>.</span></a>
+                <p>Calculadoras e explicações sobre verbas trabalhistas.</p>
+            </div>
+            <div>
+                <h2>Calculadoras</h2>
+                <ul>
+                    <li><a href="recisao.html">Rescisão contratual</a></li>
+                    <li><a href="ferias.html">Férias</a></li>
+                    <li><a href="decimo-terceiro.html">13º salário</a></li>
+                    <li><a href="fgts.html">FGTS</a></li>
+                    <li><a href="horas-extras.html">Horas extras e DSR</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>Informações</h2>
+                <ul>
+                    <li><a href="duvidas.html">Dúvidas frequentes</a></li>
+                    <li><a href="sobre.html">Sobre a Nexus</a></li>
+                    <li><a href="sobre.html#seguranca">Limites das simulações</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Nexus</span>
+            <span>Os valores calculados são estimativas.</span>
+        </div>
+    </footer>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/fgts.js"></script>
+</body>
+</html>

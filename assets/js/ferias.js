@@ -1,15 +1,45 @@
-$('calcular').onclick = () => {
-  const sal = num('salario'), extra = num('variaveis'), faltas = num('faltas');
-  if (!(sal > 0)) return erro('Informe um salário maior que zero.');
-  if (extra < 0 || faltas < 0) return erro('Use valores iguais ou maiores que zero.');
-  erro('');
-  // CLT, art. 130: faltas injustificadas reduzem os dias de férias
-  const dias = faltas <= 5 ? 30 : faltas <= 14 ? 24 : faltas <= 23 ? 18 : faltas <= 32 ? 12 : 0;
-  const abonoDias = $('abono').value === 'sim' ? Math.floor(dias / 3) : 0;
-  const dia = (sal + extra) / 30, ferias = dia * (dias - abonoDias), abono = dia * abonoDias;
-  set('r-dias', `${dias} dias`);
-  set('r-ferias', ferias);
-  set('r-abono', abono);
-  set('r-terco', (ferias + abono) / 3);
-  set('r-total', (ferias + abono) * 4 / 3);
-};
+function calcular() {
+    const salario = numero('salario');
+    const adicionais = numero('variaveis');
+    const faltas = numero('faltas');
+
+    if (salario <= 0) {
+        mostrarErro('Informe um salário maior que zero.');
+        return;
+    }
+
+    if (adicionais < 0 || faltas < 0) {
+        mostrarErro('Use valores iguais ou maiores que zero.');
+        return;
+    }
+
+    mostrarErro('');
+
+    let dias = 0;
+    if (faltas <= 5) {
+        dias = 30;
+    } else if (faltas <= 14) {
+        dias = 24;
+    } else if (faltas <= 23) {
+        dias = 18;
+    } else if (faltas <= 32) {
+        dias = 12;
+    }
+
+    let diasVendidos = 0;
+    if ($('abono').value === 'sim') {
+        diasVendidos = Math.floor(dias / 3);
+    }
+
+    const valorDia = (salario + adicionais) / 30;
+    const ferias = valorDia * (dias - diasVendidos);
+    const abono = valorDia * diasVendidos;
+
+    $('r-dias').textContent = dias + ' dias';
+    $('r-ferias').textContent = formatarMoeda(ferias);
+    $('r-abono').textContent = formatarMoeda(abono);
+    $('r-terco').textContent = formatarMoeda((ferias + abono) / 3);
+    $('r-total').textContent = formatarMoeda((ferias + abono) * 4 / 3);
+}
+
+$('calcular').addEventListener('click', calcular);

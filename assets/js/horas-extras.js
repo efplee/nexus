@@ -1,15 +1,40 @@
-$('calcular').onclick = () => {
-  const sal = num('salario'), carga = num('carga');
-  if (!(sal > 0) || !(carga > 0)) return erro('Informe um salário e uma carga horária maiores que zero.');
-  if ([num('he50'), num('he100'), num('noturnas'), num('uteis'), num('domingos')].some(valor => valor < 0)) return erro('As horas e quantidades de dias não podem ser negativas.');
-  erro('');
-  const hora = sal / carga;
-  const he50 = hora * 1.5 * num('he50'), he100 = hora * 2 * num('he100'), noturno = hora * 0.2 * num('noturnas');
-  const dsr = num('uteis') > 0 ? (he50 + he100 + noturno) / num('uteis') * num('domingos') : 0;
-  set('r-hora', hora);
-  set('r-he50', he50);
-  set('r-he100', he100);
-  set('r-noturno', noturno);
-  set('r-dsr', dsr);
-  set('r-total', he50 + he100 + noturno + dsr);
-};
+function calcular() {
+    const salario = numero('salario');
+    const carga = numero('carga');
+    const horas50 = numero('he50');
+    const horas100 = numero('he100');
+    const horasNoturnas = numero('noturnas');
+    const diasUteis = numero('uteis');
+    const domingos = numero('domingos');
+
+    if (salario <= 0 || carga <= 0) {
+        mostrarErro('Informe um salário e uma carga horária maiores que zero.');
+        return;
+    }
+
+    if (horas50 < 0 || horas100 < 0 || horasNoturnas < 0 || diasUteis < 0 || domingos < 0) {
+        mostrarErro('As horas e quantidades de dias não podem ser negativas.');
+        return;
+    }
+
+    mostrarErro('');
+
+    const valorHora = salario / carga;
+    const extras50 = valorHora * 1.5 * horas50;
+    const extras100 = valorHora * 2 * horas100;
+    const adicionalNoturno = valorHora * 0.2 * horasNoturnas;
+
+    let dsr = 0;
+    if (diasUteis > 0) {
+        dsr = (extras50 + extras100 + adicionalNoturno) / diasUteis * domingos;
+    }
+
+    $('r-hora').textContent = formatarMoeda(valorHora);
+    $('r-he50').textContent = formatarMoeda(extras50);
+    $('r-he100').textContent = formatarMoeda(extras100);
+    $('r-noturno').textContent = formatarMoeda(adicionalNoturno);
+    $('r-dsr').textContent = formatarMoeda(dsr);
+    $('r-total').textContent = formatarMoeda(extras50 + extras100 + adicionalNoturno + dsr);
+}
+
+$('calcular').addEventListener('click', calcular);
